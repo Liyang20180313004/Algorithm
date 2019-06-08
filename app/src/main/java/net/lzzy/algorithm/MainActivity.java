@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             for (int j = i + 1; j < items.length; j++) {
                 if (items[minPos].compareTo(items[j]) > 0) {
                     minPos = j;
+                    //14231
                 }
             }
             swap(minPos, i);
