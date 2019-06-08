@@ -36,7 +36,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 displayItems(edtItems);
                 break;
             case R.id.activity_main_btn_sort:
-                directSort();
+//                directSort();
+                intsertSort();
                 displayItems(tvResult);
                 break;
             default:
@@ -65,6 +66,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             swap(minPos, i);
         }
     }
+    private void intsertSort(){
+        int i;
+        for (i =1;i<items.length;i++) {
+
+
+        if(items[i]<items[i-1]){
+            int temp=items[i];
+            int m=i-1;
+            for (int j=m;j>0&&temp<items[j];j--){
+                items[j+1]=items[j];
+                m--;
+            }
+            items[m+1]=temp;
+        }
+
+    }
+}
+
 
     private void swap(int m, int n) {
         int tmp = items[m];
@@ -72,11 +91,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         items[n] = tmp;
 
     }
-
-
-
-
-
     private void generateItems() {
         items = new Integer[10];
         Random generator = new Random();
