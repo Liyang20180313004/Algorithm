@@ -9,6 +9,8 @@ import android.widget.TextView;
 import java.util.Calendar;
 import java.util.Random;
 
+import static java.util.Collections.swap;
+
 /**
  * @author Administrator
  */
@@ -53,8 +55,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void directSort() {
-        //todo:直接选择排序的具体实现
+        for (int i = 0; i < items.length - 1; i++) {
+            int minPos = i;
+            for (int j = i + 1; j < items.length; j++) {
+                if (items[minPos].compareTo(items[j]) > 0) {
+                    minPos = j;
+                }
+            }
+            swap(minPos, i);
+        }
     }
+
+    private void swap(int m, int n) {
+        int tmp = items[m];
+        items[m] = items[n];
+        items[n] = tmp;
+
+    }
+
+
+    //todo:直接选择排序的具体实现
+
 
     private void generateItems() {
         items = new Integer[10];
