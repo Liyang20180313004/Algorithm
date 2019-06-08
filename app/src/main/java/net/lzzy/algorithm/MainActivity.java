@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (items[minPos].compareTo(items[j]) > 0) {
                     minPos = j;
                     //todo:直接选择排序的具体实现
+                    //int int
                 }
             }
             swap(minPos, i);
