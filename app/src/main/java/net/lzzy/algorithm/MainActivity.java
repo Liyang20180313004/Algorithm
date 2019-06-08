@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.activity_main_btn_sort).setOnClickListener(this);
         tvResult = findViewById(R.id.activity_main_tv_result);
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
@@ -61,7 +60,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (items[minPos].compareTo(items[j]) > 0) {
                     minPos = j;
                     //todo:直接选择排序的具体实现
-                    //int int
                 }
             }
             swap(minPos, i);
@@ -76,7 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
 
-    //todo:直接选择排序的具体实现
+
 
 
     private void generateItems() {
